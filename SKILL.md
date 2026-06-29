@@ -202,19 +202,29 @@ If TASTE.md says "Empty — no references yet", proceed without taste constraint
 
 ### Feeding new taste references
 
-Triggered by: "taste this → [url/screenshot/font]"
+Triggered by: "taste this → [url/screenshot/font/image]"
 
-```
-python "C:\Users\Lenovo\.claude\skills\watch-and-learn\scripts\extract_taste.py" "<url_or_file>" --label "optional label"
-```
+**For URLs:**
+1. Use WebFetch to read the page content
+2. If page is visual/animation-heavy, also use Chrome MCP to screenshot it
+3. Extract: animation techniques, color palette, typography, spacing, motion principles, UI patterns
+4. Update `taste/TASTE.md` — add timestamped entry under "Raw Observations", synthesize into relevant sections (Aesthetic Principles, Typography, Color, Motion Principles, Style Arsenal)
+5. Update `taste/sources.md` with new row
 
-After running:
-1. Parse `REFERENCE_SAVED:` lines → read each image
-2. Parse `COLOR:` lines → add to `taste/colors.md`
-3. Parse `URL_FOR_BROWSER:` → use browser MCP to visit and screenshot if script couldn't
-4. Read all reference images carefully — analyze: color palette, typography choices, spacing/whitespace, layout grid, visual hierarchy, texture/depth, what's absent (restraint)
-5. Update `taste/TASTE.md` — add timestamped observations under "Raw Observations", then synthesize into the relevant sections (Aesthetic Principles, Typography, Color, Layout)
-6. Update `taste/sources.md` with the new entry
+**For images/screenshots:**
+```
+python "C:\Users\Lenovo\.claude\skills\watch-and-learn\scripts\extract_taste.py" "<file>" --label "optional label"
+```
+Then read the saved references and analyze visually.
+
+**What to extract from any reference:**
+- Colors: dominant, accent, background, text — exact hex
+- Typography: font families, sizes, weights, motion treatment
+- Spacing: generous or tight? consistent rhythm?
+- Shapes: sharp vs rounded? borders? shadows? depth?
+- Motion: what moves, how, when triggered
+- Mood: words that describe the feeling
+- What's NOT there: restraint philosophy, conscious omissions
 
 ### What to extract from references
 
