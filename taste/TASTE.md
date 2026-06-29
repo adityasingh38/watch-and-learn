@@ -11,6 +11,9 @@
 - **Organic over mechanical** — liquid morphs, flowing gradients, claymorphism curves beat rigid transitions.
 - **Restraint on ambient motion** — background movement stays subtle; content never competes with animation.
 - **Microinteractions as polish** — the quality signal is in hover states, button feedback, form focus. Small things done right.
+- **Simple over complex** — animation that loads fast and guides beats animation that impresses and lags. Performance is aesthetics.
+- **Emotional storytelling** — narrative-driven motion tied to brand message creates bonds; animation for animation's sake doesn't.
+- **Dynamic backgrounds react, not decorate** — time/weather/scroll-reactive backgrounds only when they complement content legibility.
 
 ## Typography
 
@@ -49,6 +52,26 @@
 - Animations that don't respond to user actions (pure decoration)
 - Flat everything — depth signals quality
 
+## Tech Stack Preferences
+
+| Need | Use | Why |
+|------|-----|-----|
+| Simple transitions, hover states | CSS keyframes | No libraries, best performance |
+| Complex sequencing, scrubbing | GSAP | Industry standard, precise control |
+| Scroll-triggered | GSAP ScrollTrigger or ScrollMagic | Both reliable; GSAP preferred |
+| SVG path animation | Vivus or GSAP | Vivus lightweight for SVG-only |
+| 3D scenes | Three.js + WebGL | Most supported, pre-built tools |
+| Lightweight custom | Anime.js | Good timing/easing, small footprint |
+| No-code prototyping | Webflow | Multi-step interactions without code |
+
+## Visual Feedback Rules
+
+- Every link needs hover + active state
+- Every button: idle → hover → pressed → (loading if async) → complete
+- Every form field: default → focused → filled → error → success
+- Error states must move (shake/nod) — static red text alone is not enough
+- Skeleton screens over spinners for content-heavy loads
+
 ## Style Arsenal
 
 Techniques available to apply on request:
@@ -72,6 +95,9 @@ Techniques available to apply on request:
 | Doodle/hand-drawn | Kids, creative, casual/indie brand energy |
 
 ## Raw Observations
+
+### 2026-06-29 — fireart.studio/blog/best-website-animation-techniques
+Tech stack breakdown: CSS for performance, GSAP for control, Three.js for 3D, Anime.js/Vivus for lightweight SVG. Key principle: simplicity wins — complex animation that tanks load time is worse than no animation. Visual feedback systems (link/button/form states) are non-negotiable. Scroll-based storytelling for long-form. Skeleton screens over spinners. Dynamic backgrounds must not compete with content legibility. Mobile: tap-triggered elevation replaces hover.
 
 ### 2026-06-29 — svgator.com/blog/website-animation-examples-and-effects
 31 animation examples catalogued. Key patterns:
