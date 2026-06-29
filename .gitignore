@@ -1,0 +1,15 @@
+cache/
+taste/references/
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+.DS_Store
+Thumbs.db
+demo/demo.gif
+figma_script.js
+figma_text_script.js
+figma_build_script.js
+bin/

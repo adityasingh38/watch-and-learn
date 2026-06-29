@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Framer Tutorial — Replicated by watch-and-learn</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  /* Exact values extracted from Framer tutorial video frames */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #f5f5f5;
+  }
+
+  /* ── Responsive breakpoints matching Framer video ── */
+  /* Desktop: 1200px | Tablet: 810px | Phone: 390px    */
+
+  .page {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: #fff;
+  }
+
+  /* Hero section — teal frame, color #005B6E from color picker in frame */
+  .hero {
+    background-color: #005B6E;
+    width: 100%;
+    padding: 120px 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-text {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 78px;           /* exact value from right panel: size 78 */
+    line-height: 1.2;          /* line: 1.2em from panel */
+    letter-spacing: 0em;       /* letter: 0em from panel */
+    color: #ffffff;
+    text-align: center;
+  }
+
+  /* Content section */
+  .content {
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    text-align: center;
+  }
+
+  .title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 78px;           /* matches hero text size from panel */
+    line-height: 1.2;
+    color: #000000;            /* color: 000000 from color picker */
+  }
+
+  .description {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    line-height: 1.5;
+    color: #333;
+    max-width: 600px;
+  }
+
+  /* Button stack — horizontal, gap 10 from layout panel */
+  .button-group {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;                  /* gap: 10 from Stack layout panel */
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 8px;
+  }
+
+  /* Buttons — orange stack, color #FFA600 from Selection Colors panel */
+  .btn {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #FFA600; /* exact: FFA600 100% from layers panel */
+    border: none;
+    cursor: pointer;
+    width: 200px;               /* fix: 200 from size panel */
+    padding: 10px 50px;         /* padding: 10 top/bottom, 50 left/right */
+    border-radius: 10px;        /* rounded corner: 10 from panel */
+    text-align: center;
+  }
+
+  .btn:hover {
+    filter: brightness(0.92);
+  }
+
+  /* ── Tablet breakpoint: 810px ── */
+  @media (max-width: 1199px) and (min-width: 810px) {
+    .hero-text { font-size: 54px; }
+    .title { font-size: 54px; }
+    .content { gap: 12px; } /* gap: 30 adjusted on tablet breakpoint */
+  }
+
+  /* ── Phone breakpoint: 390px ── */
+  @media (max-width: 809px) {
+    .hero { padding: 60px 24px; }
+    .hero-text { font-size: 36px; }
+    .content { padding: 32px 24px; gap: 12px; }
+    .title { font-size: 32px; }
+    .description { font-size: 16px; }
+
+    /* Phone: stack switches to vertical direction */
+    .button-group {
+      flex-direction: column;  /* direction: vertical on phone breakpoint */
+      align-items: center;
+    }
+
+    .btn { width: 100%; max-width: 280px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- Hero frame — teal, "Section" text centered -->
+  <section class="hero">
+    <h1 class="hero-text">Section</h1>
+  </section>
+
+  <!-- Content stack — title, description, button group -->
+  <section class="content">
+    <h2 class="title">Title content</h2>
+    <p class="description">
+      This is description about this section<br>
+      to learn different features about options
+    </p>
+
+    <!-- Button stack — Discover + Subscribe, horizontal desktop / vertical phone -->
+    <div class="button-group">
+      <button class="btn">Discover</button>
+      <button class="btn">Subscribe</button>
+    </div>
+  </section>
+
+</div>
+</body>
+</html>
